@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
+import { StoreProvider } from './Store';
+import App from './App';
 
-const App = (): JSX.Element => {
-  return <h1>Webpack React TS Starter </h1>;
-};
-
-const root = document.getElementById('app-root');
-
-ReactDOM.render(<App />, root);
+ReactDOM.render(
+  <StoreProvider>
+    <App />
+  </StoreProvider>,
+  document.getElementById('app-root')
+);
 
 export default App;
